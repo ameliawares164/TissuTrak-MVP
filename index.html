@@ -2,11 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=homescreens/login.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TissuTrak</title>
+  <title>TissuTrak Login</title>
+
+  <!-- Firebase SDKs - Non-Module (Compat) Version -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Your Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBk7eRIfodYvqoGDmcghx2yOGGmZEY-jT8",
+      authDomain: "tissutrak-mvp.firebaseapp.com",
+      projectId: "tissutrak-mvp",
+      storageBucket: "tissutrak-mvp.firebasestorage.app",
+      messagingSenderId: "373622573645",
+      appId: "1:373622573645:web:20c90cc6cd2111a6d4aa04",
+      measurementId: "G-0SZ4LXY7N1"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+    }
+
+    // Login Function
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          console.log("Logged in:", userCredential.user.uid);
+          window.location.href = 'Homescreens/homescreen.html'; // Redirect after login
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+
+    // SignUp Function
+    function signup() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(async (userCredential) => {
+          console.log("Signed up:", userCredential.user.uid);
+
+          const user = userCredential.user;
+
+          await db.collection("users").doc(user.uid).set({
+            email: user.email,
+            createdAt: new Date().toISOString()
+          });
+
+          window.location.href = 'homescreens/homescreen.html'; // Redirect after signup
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+  </script>
+
+  <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
-  <p>Redirecting to Login...</p>
-</body>
-</html>
+
+  <div class="login-container">
+    <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+
+    <h2>Welcome! Please login or create an account</h2>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button class="toggle-password" onclick="togglePasswordVisibility()">👁️</button>
+      </div>
+    </div>
+
+    <button class="login-btn" onclick="login()">Login</button>
+    <button class="signup-btn" onclick="signup()">Sign Up</button>
+
+       <div class="terms">
+        By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+      </div>
+    </div>
+  
+  </body>
+  </html>
+  
