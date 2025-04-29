@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Tracker</title>
+  <link rel="stylesheet" href="exercise_homepage.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-section">
+        <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+        <h1>Exercise Tracker</h1>
+      </div>
+    </header>
+
+    <!-- Quick Access Buttons -->
+    <div class="quick-access">
+      <button id="log-exercise-btn">➕ Log Exercise</button>
+    </div>
+
+    <!-- Today's Summary -->
+    <section class="summary">
+      <h2>Today's Summary</h2>
+      <div class="summary-cards">
+        <div class="card">
+          <h3 id="calories-burned">0</h3>
+          <p>Calories</p>
+        </div>
+        <div class="card">
+          <h3 id="total-time">0m</h3>
+          <p>Time</p>
+        </div>
+        <div class="card">
+          <h3 id="avg-heart-rate">0</h3>
+          <p>BPM Avg</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-entries">
+        <button id="exercise-history-btn" class="section-header-button">Recent Entries ➔</button>
+        <div id="entries-list">
+          <!-- JS will fill this with recent activities -->
+        </div>
+      </section>
+      
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-button" onclick="goHome()">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-title">Home</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToSymptoms()">
+        <div class="nav-icon">📋</div>
+        <div class="nav-title">Symptoms</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToReports()">
+        <div class="nav-icon">📊</div>
+        <div class="nav-title">Reports</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToProfile()">
+        <div class="nav-icon">👤</div>
+        <div class="nav-title">Profile</div>
+      </button>
+    </nav>
+    
+    <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+    
+  </div>
+
+  <script src="exercise_homepage.js"></script>
+</body>
+</html>

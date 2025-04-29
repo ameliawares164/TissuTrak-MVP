@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="checkLogin()">
+
+    <script>
+    function checkLogin() {
+      auth.onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location.href = 'login.html'; // If not logged in, force back
+        }
+      });
+    }
+    </script>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TissuTrak - Log Water Intake</title>
+  <link rel="stylesheet" href="log_water.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button id="backBtn">⬅️</button>
+      <h1 id="pageTitle">Log Water Intake</h1>
+    </header>
+
+    <!-- Water Type Selection -->
+    <section class="water-type" id="waterTypeSection">
+      <h3>Select Water Type 💦</h3>
+      <div class="water-icons">
+        <button class="water-type-btn" id="plainWaterBtn">🥤 Plain Water</button>
+        <button class="water-type-btn" id="electrolyteWaterBtn">⚡ Electrolyte Water</button>
+        <button class="water-type-btn" id="flavoredWaterBtn">🍋 Flavored Water</button>
+      </div>
+    </section>
+
+    <!-- Change Water Type Button -->
+    <section id="changeTypeSection" style="display: none;">
+      <button id="changeTypeBtn">🔄 Change Water Type</button>
+    </section>
+
+    <!-- Quantity Entry -->
+    <section class="quantity-entry">
+      <h3>Quantity 📏</h3>
+      <input type="number" id="quantityInput" placeholder="Enter amount" />
+      <select id="unitSelect">
+        <option value="ml">mL</option>
+        <option value="oz">oz</option>
+      </select>
+    </section>
+
+    <!-- Nutrient Options -->
+    <section id="nutrientSection" class="nutrient-section" style="display: none;">
+      <h3>Nutrients 🔬</h3>
+      <div class="nutrients">
+        <label><input type="checkbox" id="electrolytes" /> Electrolytes</label>
+        <label><input type="checkbox" id="vitamins" /> Vitamins</label>
+        <label><input type="checkbox" id="minerals" /> Minerals</label>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="notes-section">
+      <h3>Notes</h3>
+      <textarea id="notesInput" placeholder="Add any notes..."></textarea>
+    </section>
+
+    <!-- Date and Time -->
+    <section class="date-time">
+      <h3>Date & Time 📅⏰</h3>
+      <input type="date" id="waterDate" />
+      <input type="time" id="waterTime" />
+    </section>
+
+    <!-- Save Button -->
+    <button id="saveWaterBtn">✅ Save & Log Water</button>
+
+  </div>
+
+  <script src="log_water.js"></script>
+</body>
+</html>

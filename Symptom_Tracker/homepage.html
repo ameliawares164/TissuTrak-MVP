@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symptom Tracker</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo-container">
+        <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+      </div>
+    </header>
+    
+    <header>
+      <h2>Symptom Tracker</h2>
+      <button class="settings-btn">
+        <span class="icon">⚙️</span>
+      </button>
+    </header>
+
+    <main>
+      <!-- Search bar -->
+      <div class="search-bar">
+        <input id="search-input" type="text" placeholder="Search symptoms..." />
+        <span class="icon">🔍</span>
+      </div>
+
+      <!-- Link to Log Symptom Page -->
+      <a href="Log_Symptom_1.html">
+        <button id="log-symptom-btn" class="primary-btn">✏️ Log a New Symptom</button>
+      </a>
+
+      <!-- Recent Entries button -->
+      <a href="Symptom_History.html">
+        <button class="tab-btn active">Recent Entries</button>
+      </a>
+
+      <!-- Recent symptom entries list -->
+      <div id="recent-entries" class="entry-list">
+        <!-- Entries will be injected here -->
+      </div>
+
+      <!-- No entries found message -->
+      <div id="no-results" class="no-results hidden">
+        No symptoms found.
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-button" onclick="goHome()">🏠 Home</button>
+      <button class="nav-button" onclick="goToSymptoms()">📋 Symptoms</button>
+      <button class="nav-button" onclick="goToReports()">📊 Reports</button>
+      <button class="nav-button" onclick="goToProfile()">👤 Profile</button>
+    </nav>
+    
+  </div>
+
+  <script src="homepage.js"></script>
+</body>
+</html>

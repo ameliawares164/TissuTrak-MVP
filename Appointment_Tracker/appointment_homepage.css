@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    padding: 20px;
+    padding-bottom: 80px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 80px; /* Made logo larger */
+    margin-bottom: 10px;
+  }
+  
+  .page-title {
+    font-size: 26px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .quick-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .add-btn {
+    background-color: #00b394;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 60%;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .appointment-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .calendar-day {
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: #00b394;
+    color: white;
+  }
+  
+  .calendar-day.selected {
+    background-color: #00b394;
+    color: white;
+  }
+  
+  .calendar-day.today {
+    border: 2px solid #00b394;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* keep it on top */
+  }
+  
+  .nav-button {
+    flex: 1; /* 🛠 Each button takes exactly 1/4 of screen width */
+    background: none;
+    border: none;
+    color: #00b394; /* TissuTrak blue */
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #e0f7f4;
+    color: #00917d;
+  }
+  
+  .nav-icon {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .nav-title {
+    font-size: 12px;
+  }
+  
+  #selected-date-appointments {
+    margin-bottom: 100px; /* or 80px depending on how much space you want */
+  }
+  

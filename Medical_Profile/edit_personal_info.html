@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Personal Info</title>
+  <link rel="stylesheet" href="edit_personal_info.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <button class="back-button" onclick="goBack()">←</button>
+    <h1 class="page-title">Edit Personal Info</h1>
+  </header>
+
+  <form id="personal-info-form">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter your name" />
+
+    <label for="dob">Date of Birth</label>
+    <input type="text" id="dob" placeholder="DD/MM/YYYY" />
+
+    <label for="gender">Gender</label>
+    <input type="text" id="gender" placeholder="Enter your gender" />
+
+    <label for="contact">Contact</label>
+    <input type="text" id="contact" placeholder="Enter your contact number" />
+
+    <button type="submit" class="save-button">Save</button>
+
+  </form>
+
+</div>
+
+<script src="edit_personal_info.js"></script>
+</body>
+</html>

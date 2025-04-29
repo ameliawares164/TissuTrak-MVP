@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medication Schedule</title>
+  <link rel="stylesheet" href="medication_schedule.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <button id="back-btn" class="back-btn">←</button>
+      <h1 class="page-title">Medication Schedule</h1>
+    </header>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+      <div class="month-year" id="month-year"></div>
+      <div class="calendar-header">
+        <button id="prev-week" class="nav-arrow">◀</button>
+        <div class="week-days" id="week-days"></div>
+        <button id="next-week" class="nav-arrow">▶</button>
+      </div>
+
+      <button id="full-calendar-btn" class="full-calendar-btn">📅 Full Calendar</button>
+      <div id="full-calendar" class="full-calendar hidden"></div>
+    </section>
+
+    <!-- Today's Medications -->
+    <section>
+      <h2>Today's Medications</h2>
+      <div id="todays-meds" class="med-list"></div>
+    </section>
+
+    <!-- Taken Medications -->
+    <section>
+      <h2>Medications Taken</h2>
+      <div id="taken-meds" class="med-list"></div>
+    </section>
+
+  </div>
+
+  <script src="medication_schedule.js"></script>
+</body>
+</html>

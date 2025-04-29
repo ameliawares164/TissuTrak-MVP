@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 80px; /* bigger logo */
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .quick-access {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quick-access button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #00b394;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .summary {
+    margin-top: 30px;
+  }
+  
+  .summary h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .summary-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card:last-child {
+    margin-right: 0;
+  }
+  
+  .recent-entries {
+    margin-top: 30px;
+  }
+  
+  .section-header-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #00b394;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  #entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Recent entries clickable */
+  .entry {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .entry:hover {
+    background-color: #e6fcf7;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* keep it on top */
+  }
+  
+  .nav-button {
+    flex: 1; /* 🛠 Each button takes exactly 1/4 of screen width */
+    background: none;
+    border: none;
+    color: #00b394; /* TissuTrak blue */
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #e0f7f4;
+    color: #00917d;
+  }
+  
+  .nav-icon {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .nav-title {
+    font-size: 12px;
+  }
+  

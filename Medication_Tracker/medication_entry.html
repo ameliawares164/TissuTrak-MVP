@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medication Details</title>
+  <link rel="stylesheet" href="medication_entry.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <button id="back-btn" class="back-btn">←</button>
+      <h1 class="page-title">Medication Details</h1>
+      <button id="edit-btn" class="edit-btn">✏️</button>
+    </header>
+
+    <!-- Medication Info -->
+    <section class="medication-info">
+      <h2 id="med-name">Medication Name</h2>
+      <p>💊 <span id="med-dosage">Dosage and Frequency</span></p>
+      <p>📅 Started: <span id="start-date">Start Date</span></p>
+      <p id="end-date-container" class="hidden">Ended: <span id="end-date">End Date</span></p>
+      <p>🩺 Purpose: <span id="purpose">Purpose</span></p>
+      <p>🩹 Method: <span id="method">Method</span></p>
+      <p>⏰ Times: <span id="times">Times to Take</span></p>
+      <p>📝 Notes: <span id="notes">Notes</span></p>
+    </section>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button id="mark-taken" class="mark-btn">Mark Taken</button>
+      <button id="stop-med" class="stop-btn">🚫 Stop Medication</button>
+    </div>
+
+  </div>
+
+  <!-- Edit Medication Modal -->
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Edit Medication</h3>
+
+      <label>Name</label>
+      <input type="text" id="edit-name">
+
+      <label>Dosage</label>
+      <input type="text" id="edit-dosage">
+
+      <label>Frequency</label>
+      <input type="text" id="edit-frequency">
+
+      <label>Purpose</label>
+      <input type="text" id="edit-purpose">
+
+      <label>Method</label>
+      <input type="text" id="edit-method">
+
+      <label>Times to Take</label>
+      <input type="text" id="edit-times">
+
+      <label>Notes</label>
+      <input type="text" id="edit-notes">
+
+      <div class="modal-actions">
+        <button id="save-edit" class="save-btn">Save</button>
+        <button id="cancel-edit" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="medication_entry.js"></script>
+</body>
+</html>

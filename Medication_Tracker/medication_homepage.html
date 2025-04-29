@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medication Tracker</title>
+  <link rel="stylesheet" href="medication_homepage.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+    </div>
+
+    <h1 class="page-title">Medication Tracker</h1>
+
+    <div class="quick-add-section">
+      <button class="quick-add-btn" id="add-medication-btn">➕ Add Medication</button>
+    </div>
+
+    <section class="medications-section">
+      <h2>Today's Medications</h2>
+      <div id="todays-meds" class="med-list"></div>
+    </section>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" id="home-btn">🏠 Home</button>
+    <button class="nav-btn" id="meds-btn">💊 Meds</button>
+    <button class="nav-btn" id="reports-btn">📊 Reports</button>
+    <button class="nav-btn" id="calendar-btn">📅 Calendar</button>
+  </nav><nav class="bottom-nav">
+    <button class="nav-button" onclick="goHome()">
+      <div class="nav-icon">🏠</div>
+      <div class="nav-title">Home</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToMeds()">
+      <div class="nav-icon">💊</div>
+      <div class="nav-title">Meds</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToReports()">
+      <div class="nav-icon">📊</div>
+      <div class="nav-title">Reports</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToCalendar()">
+      <div class="nav-icon">📅</div>
+      <div class="nav-title">Calendar</div>
+    </button>
+  </nav>
+  
+  <script src="/medication_nav.js"></script> <!-- (this will be your new JS file) -->
+  
+
+  <script src="medication_homepage.js"></script>
+</body>
+</html>

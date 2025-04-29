@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TissuTrak - Food & Water Tracker</title>
+  <link rel="stylesheet" href="Food_homepage.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+      </div>
+      <h1>Food & Water Tracker</h1>
+      <div class="settings-icon">
+        <button id="settings-btn">⚙️</button>
+      </div>
+    </header>
+    
+
+    <!-- Today's Intake Summary -->
+    <section class="intake-summary">
+      <div class="tracker">
+        <p><span class="emoji">💧</span> Water Intake</p>
+        <p><span id="water-progress">0oz / 80oz</span></p>
+        <div class="progress-bar">
+          <div id="water-progress-bar" class="progress"></div>
+        </div>
+      </div>
+      <div class="tracker">
+        <p><span class="emoji">🥗</span> Food Intake</p>
+        <p><span id="food-progress">0 / 5 Meals Today</span></p>
+      </div>
+    </section>
+
+    <!-- Quick Add Section -->
+<section class="quick-add">
+  <button id="logFoodBtn"><span class="plus">➕</span> Log Food</button>
+  <button id="logWaterBtn"><span class="plus">➕</span> Log Water</button>
+</section>
+
+<!-- Recent Entries Section -->
+<section class="recent-entries">
+  <button id="viewHistoryBtn" class="recent-logs-btn">Recent Logs</button>
+  <ul id="recent-logs"></ul>
+</section>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-button" onclick="goHome()">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-title">Home</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToSymptoms()">
+        <div class="nav-icon">📋</div>
+        <div class="nav-title">Symptoms</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToReports()">
+        <div class="nav-icon">📊</div>
+        <div class="nav-title">Reports</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToProfile()">
+        <div class="nav-icon">👤</div>
+        <div class="nav-title">Profile</div>
+      </button>
+    </nav>
+    
+    <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+    
+  </div>
+
+  <script src="Food_homepage.js"></script>
+</body>
+</html>

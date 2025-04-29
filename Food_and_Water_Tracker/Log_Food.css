@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#pageTitle {
+  font-size: 24px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+#backBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #00b394;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #008f75;
+}
+
+.ingredients-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#ingredientList {
+  list-style: none;
+  padding: 0;
+}
+
+#ingredientList li {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.meal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.meal-btn {
+  flex: 1;
+  padding: 10px;
+}
+
+.meal-btn.selected {
+  background-color: #ccf0e0;
+  color: black;
+}

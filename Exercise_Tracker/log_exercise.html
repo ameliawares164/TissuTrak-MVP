@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="checkLogin()">
+
+    <script>
+    function checkLogin() {
+      auth.onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location.href = 'login.html'; // If not logged in, force back
+        }
+      });
+    }
+    </script>
+     
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Exercise</title>
+  <link rel="stylesheet" href="log_exercise.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <button class="back-btn" id="back-btn">⬅️</button>
+      <h1>Log Exercise</h1>
+    </header>
+
+    <!-- Exercise Details -->
+    <section class="exercise-details">
+
+      <label>🏋️ Activity Type</label>
+      <select id="activity-type">
+        <option value="">Select Activity</option>
+        <option value="Walking">Walking</option>
+        <option value="Running">Running</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" id="custom-activity" class="hidden" placeholder="Enter custom activity">
+
+      <label>⏱️ Duration</label>
+      <div class="duration-section">
+        <input type="number" id="duration-value" placeholder="Enter number">
+        <select id="duration-unit">
+          <option value="minutes">Minutes</option>
+          <option value="hours">Hours</option>
+        </select>
+      </div>
+
+      <label>🔥 Calories Burned</label>
+      <input type="number" id="calories" placeholder="Enter calories">
+
+      <label>💓 Vitals Before Activity</label>
+      <div class="vitals-section">
+        <input type="number" id="before-vital-value" placeholder="Value">
+        <select id="before-vital-type">
+          <option value="Heart Rate">Heart Rate</option>
+          <option value="Blood Pressure">Blood Pressure</option>
+          <option value="Oxygen Saturation">Oxygen Saturation</option>
+          <option value="Temperature">Temperature</option>
+        </select>
+      </div>
+
+      <label>💓 Vitals During Activity</label>
+      <div class="vitals-section">
+        <input type="number" id="during-vital-value" placeholder="Value">
+        <select id="during-vital-type">
+          <option value="Heart Rate">Heart Rate</option>
+          <option value="Blood Pressure">Blood Pressure</option>
+          <option value="Oxygen Saturation">Oxygen Saturation</option>
+          <option value="Temperature">Temperature</option>
+        </select>
+      </div>
+
+      <label>😣 Pain Level</label>
+      <input type="range" min="0" max="10" value="5" id="pain-level" class="pain-slider">
+      <div class="pain-scale">
+        <span>None (0)</span>
+        <span>Severe (10)</span>
+      </div>
+
+      <label>📝 Additional Notes</label>
+      <textarea id="notes" placeholder="Add your observations"></textarea>
+
+    </section>
+
+    <!-- Save Button -->
+    <button id="save-btn" class="save-btn">✅ Save & Log Exercise</button>
+
+  </div>
+
+  <script src="log_exercise.js"></script>
+</body>
+</html>

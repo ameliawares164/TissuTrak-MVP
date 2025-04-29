@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="checkLogin()">
+
+    <script>
+    function checkLogin() {
+      auth.onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location.href = 'login.html'; // If not logged in, force back
+        }
+      });
+    }
+    </script>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Vitals</title>
+  <link rel="stylesheet" href="log_vitals.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn" onclick="goBack()">⬅️</button>
+    <h1 class="title">Log Vitals</h1>
+  </header>
+
+  <!-- Time and Date -->
+  <div class="input-label">Time</div>
+  <div class="input-group">
+    <input type="datetime-local" id="datetime">
+  </div>
+
+  <!-- Vital Type Dropdown -->
+  <div class="input-label">Select Vital Type</div>
+  <div class="input-group">
+    <select id="vital-type" onchange="showVitalInputs()">
+      <option value="">-- Select --</option>
+      <option value="bloodPressure">Blood Pressure</option>
+      <option value="heartRate">Heart Rate</option>
+      <option value="respiratoryRate">Respiratory Rate</option>
+      <option value="oxygenSaturation">Oxygen Saturation (SpO₂)</option>
+      <option value="temperature">Temperature</option>
+      <option value="weight">Weight</option>
+      <option value="bloodGlucose">Blood Glucose</option>
+    </select>
+  </div>
+
+  <!-- Dynamic Input Fields -->
+  <div id="vital-inputs"></div>
+
+  <!-- Notes Section -->
+  <div class="input-label">Notes</div>
+  <div class="input-group">
+    <textarea id="notes" placeholder="Add any notes..."></textarea>
+  </div>
+
+</div>
+
+<!-- Save Button -->
+<button class="save-btn" onclick="saveVitals()">✅ Save & Log Vitals</button>
+
+<script src="log_vitals.js"></script>
+</body>
+</html>

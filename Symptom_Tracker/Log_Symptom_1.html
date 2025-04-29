@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log a New Symptom</title>
+  <link rel="stylesheet" href="Log_Symptom_1.css">
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBk7eRIfodYvqoGDmcghx2yOGGmZEY-jT8",
+      authDomain: "tissutrak-mvp.firebaseapp.com",
+      projectId: "tissutrak-mvp",
+      storageBucket: "tissutrak-mvp.firebasestorage.app",
+      messagingSenderId: "373622573645",
+      appId: "1:373622573645:web:20c90cc6cd2111a6d4aa04",
+      measurementId: "G-0SZ4LXY7N1"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Protect page
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = '../homescreens/login.html'; // Adjust if needed
+      }
+    });
+
+    // Save Symptom
+    async function saveSymptom() {
+      const user = auth.currentUser;
+      if (!user) {
+        alert("You must be logged in.");
+        window.location.href = '../homescreens/login.html';
+        return;
+      }
+
+      const symptomName = document.getElementById('symptom-search').value;
+      const datetime = document.getElementById('datetime').value;
+      const severity = document.getElementById('severity-value').value;
+      const triggers = Array.from(document.querySelectorAll('input[name="trigger"]:checked')).map(cb => cb.value);
+
+      if (!symptomName || !datetime) {
+        alert("Please fill out Symptom and Date/Time!");
+        return;
+      }
+
+      const symptomData = {
+        symptomName,
+        datetime,
+        severity,
+        triggers,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        await addDoc(collection(db, "users", user.uid, "symptoms"), symptomData);
+        alert('Symptom saved successfully!');
+        window.location.href = 'log_symptom_2.html'; // Redirect to next page
+      } catch (error) {
+        console.error('Error saving symptom:', error);
+        alert('Failed to save symptom. Try again.');
+      }
+    }
+
+    // Handle emoji selection
+    window.addEventListener('DOMContentLoaded', () => {
+      const emojis = document.querySelectorAll('#emoji-scale span');
+      emojis.forEach(emoji => {
+        emoji.addEventListener('click', () => {
+          document.getElementById('severity-value').value = emoji.getAttribute('data-value');
+          emojis.forEach(e => e.classList.remove('selected'));
+          emoji.classList.add('selected');
+        });
+      });
+
+      // Extra fields toggle
+      const dietTrigger = document.getElementById('diet-trigger');
+      const activityTrigger = document.getElementById('activity-trigger');
+      const dietDetail = document.getElementById('diet-detail');
+      const activityDetail = document.getElementById('activity-detail');
+      const extraFields = document.getElementById('extra-fields');
+
+      dietTrigger.addEventListener('change', () => {
+        extraFields.classList.toggle('hidden', !dietTrigger.checked && !activityTrigger.checked);
+        dietDetail.classList.toggle('hidden', !dietTrigger.checked);
+      });
+
+      activityTrigger.addEventListener('change', () => {
+        extraFields.classList.toggle('hidden', !dietTrigger.checked && !activityTrigger.checked);
+        activityDetail.classList.toggle('hidden', !activityTrigger.checked);
+      });
+
+      // Save button
+      document.getElementById('saveSymptom').addEventListener('click', saveSymptom);
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn" onclick="window.history.back()">←</button>
+    <h1>Log a New Symptom</h1>
+  </header>
+
+  <!-- Symptom Search -->
+  <div class="input-section">
+    <label for="symptom-search">Symptom Name</label>
+    <input type="text" id="symptom-search" placeholder="Enter symptom name..." aria-label="Symptom search">
+  </div>
+
+  <!-- Date & Time -->
+  <div class="input-section">
+    <label for="datetime">Date & Time</label>
+    <input type="datetime-local" id="datetime" aria-label="Select date and time">
+  </div>
+
+  <!-- Severity -->
+  <div class="severity-section">
+    <label>Severity</label>
+    <div class="emoji-scale" id="emoji-scale">
+      <span data-value="1">😊</span>
+      <span data-value="2">😐</span>
+      <span data-value="3" class="selected">😕</span>
+      <span data-value="4">😣</span>
+      <span data-value="5">😩</span>
+    </div>
+    <input type="hidden" id="severity-value" value="3">
+  </div>
+
+  <!-- Triggers -->
+  <div class="triggers">
+    <label>Triggers</label>
+    <div class="trigger-options">
+      <label><input type="checkbox" name="trigger" value="Stress"> Stress</label>
+      <label><input type="checkbox" name="trigger" value="Diet" id="diet-trigger"> Diet</label>
+      <label><input type="checkbox" name="trigger" value="Weather"> Weather</label>
+      <label><input type="checkbox" name="trigger" value="Activity" id="activity-trigger"> Activity</label>
+      <label><input type="checkbox" name="trigger" value="Unknown"> Unknown</label>
+    </div>
+
+    <!-- Extra Fields for Diet or Activity -->
+    <div id="extra-fields" class="hidden">
+      <input type="text" id="diet-detail" class="hidden" placeholder="Describe what food...">
+      <input type="text" id="activity-detail" class="hidden" placeholder="Describe the activity...">
+    </div>
+  </div>
+
+  <!-- Save Button -->
+  <button class="save-btn" id="saveSymptom">Save & Continue</button>
+</div>
+
+</body>
+</html>

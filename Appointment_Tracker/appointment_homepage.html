@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Tracker</title>
+  <link rel="stylesheet" href="appointment_homepage.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-section">
+        <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+        <h1 class="page-title">Appointment Tracker</h1>
+      </div>
+    </header>
+
+    <!-- Quick Access Button -->
+    <div class="quick-buttons">
+      <button class="add-btn" onclick="addAppointment()">➕ Add Appointment</button>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <section class="section">
+      <h2>Upcoming Appointments</h2>
+      <div id="appointments-list" class="appointments-list">
+        <!-- Dynamic upcoming appointments will be inserted here -->
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="section">
+      <div class="calendar-header">
+        <button class="nav-btn" onclick="previousMonth()">⬅️</button>
+        <h3 id="calendar-month-year">Month Year</h3>
+        <button class="nav-btn" onclick="nextMonth()">➡️</button>
+      </div>
+      <div id="calendar" class="calendar-grid">
+        <!-- Calendar will be generated dynamically -->
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-button" onclick="goHome()">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-title">Home</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToSymptoms()">
+        <div class="nav-icon">📋</div>
+        <div class="nav-title">Symptoms</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToReports()">
+        <div class="nav-icon">📊</div>
+        <div class="nav-title">Reports</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToProfile()">
+        <div class="nav-icon">👤</div>
+        <div class="nav-title">Profile</div>
+      </button>
+    </nav>
+    
+    <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+    
+
+  </div>
+
+  <script src="appointment_homepage.js"></script>
+<!-- Appointments for Selected Date -->
+<section class="section">
+    <h2>Appointments on Selected Date</h2>
+    <div id="selected-date-appointments" class="appointments-list">
+      <!-- Will be dynamically filled when a date is clicked -->
+    </div>
+  </section>
+  
+</body>
+</html>

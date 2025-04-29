@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TissuTrak - Food & Water History</title>
+  <link rel="stylesheet" href="food_water_history.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button id="backBtn">⬅️</button>
+      <h1>Food & Water History</h1>
+    </header>
+
+    <!-- Search and Filter Bar -->
+    <section class="top-controls">
+      <input type="text" id="searchInput" placeholder="Search entries...">
+      <select id="dateFilter">
+        <option value="all">All Time</option>
+        <option value="7">Last 7 Days</option>
+        <option value="30">Last 30 Days</option>
+        <option value="90">Last 90 Days</option>
+      </select>
+    </section>
+
+    <!-- Entries List -->
+    <section id="entriesList" class="entries-list">
+      <!-- Dynamically populated -->
+    </section>
+
+    <!-- Pagination Controls -->
+    <section class="pagination-controls">
+      <button id="prevPageBtn">⬅️ Previous</button>
+      <span id="pageInfo"></span>
+      <button id="nextPageBtn">Next ➡️</button>
+    </section>
+
+    <!-- Export Button -->
+    <section class="export-section">
+      <button id="exportBtn">📄 Export All to PDF</button>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-button" onclick="goHome()">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-title">Home</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToSymptoms()">
+        <div class="nav-icon">📋</div>
+        <div class="nav-title">Symptoms</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToReports()">
+        <div class="nav-icon">📊</div>
+        <div class="nav-title">Reports</div>
+      </button>
+    
+      <button class="nav-button" onclick="goToProfile()">
+        <div class="nav-icon">👤</div>
+        <div class="nav-title">Profile</div>
+      </button>
+    </nav>
+    
+    <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+    
+    <script src="food_water_history.js"></script>
+  </div>
+</body>
+</html>

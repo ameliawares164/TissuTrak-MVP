@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #pageTitle {
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  #backBtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .entry-details {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .entry-details h2, h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .entry-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .entry-details li {
+    margin-bottom: 5px;
+  }
+  

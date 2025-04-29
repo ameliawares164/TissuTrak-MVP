@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitals History</title>
+  <link rel="stylesheet" href="vitals_history.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn" onclick="goBack()">⬅️</button>
+    <h1 class="title">Vitals History</h1>
+  </header>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="input-group">
+      <select id="date-filter" onchange="applyFilters()">
+        <option value="7">Last 7 Days</option>
+        <option value="30">Last 30 Days</option>
+        <option value="all">All Time</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <select id="vital-type-filter" onchange="applyFilters()">
+        <option value="">All Vitals</option>
+        <option value="bloodPressure">Blood Pressure</option>
+        <option value="heartRate">Heart Rate</option>
+        <option value="respiratoryRate">Respiratory Rate</option>
+        <option value="oxygenSaturation">Oxygen Saturation</option>
+        <option value="temperature">Temperature</option>
+        <option value="weight">Weight</option>
+        <option value="bloodGlucose">Blood Glucose</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Vitals List -->
+  <section id="vitals-list">
+    <!-- Vitals entries will appear dynamically here -->
+  </section>
+
+  <!-- No entries -->
+  <div id="no-entries" class="no-entries hidden">No entries found.</div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button onclick="prevPage()">⬅️ Previous</button>
+    <button onclick="nextPage()">Next ➡️</button>
+  </div>
+
+  <!-- Export Button -->
+  <button class="export-btn" onclick="exportVitals()">📤 Export Data</button>
+
+</div>
+
+<script src="vitals_history.js"></script>
+</body>
+</html>

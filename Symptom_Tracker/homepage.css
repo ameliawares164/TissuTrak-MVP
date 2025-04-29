@@ -1,0 +1,150 @@
+/* General page layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 480px;
+  margin: auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* 🔥 WAS 20px, now smaller */
+}
+
+.logo {
+  width: 100px; /* 🔥 Make it smaller */
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+/* Search bar styling */
+.search-bar {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.search-bar .icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Button styling */
+.primary-btn {
+  display: block;
+  width: 100%;
+  background: #00b394;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: black;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Recent Entries list */
+.entry-list .entry {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.entry-list .entry:hover {
+  background-color: #e0f7f4;
+}
+
+.entry h4 {
+  margin: 0;
+}
+
+.entry p {
+  font-size: 14px;
+  color: #555;
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0; /* 🛠 Make sure it's pinned to the left edge */
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center; /* center all nav buttons inside */
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* 🛠 control nice even spacing between icons */
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #00b394; /* TissuTrak blue */
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+  color: #00917d;
+}
+
+
+
+/* No results found */
+.no-results {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #777;
+}
+
+.hidden {
+  display: none;
+}

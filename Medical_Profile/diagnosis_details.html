@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnoses Details</title>
+  <link rel="stylesheet" href="diagnosis_details.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <button class="back-button" onclick="goBack()">←</button>
+    <h1 class="page-title" id="diagnosis-title">Diagnoses Details</h1>
+  </header>
+
+  <div class="diagnosis-list" id="diagnosis-list">
+    <!-- Diagnoses load here -->
+  </div>
+
+  <div class="add-button-container">
+    <button class="add-button" onclick="addNewDiagnosis()">➕ Add Diagnosis</button>
+  </div>
+
+</div>
+
+<script src="diagnosis_details.js"></script>
+</body>
+</html>

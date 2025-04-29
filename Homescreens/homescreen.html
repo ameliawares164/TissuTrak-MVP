@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TissuTrak Home</title>
+  <link rel="stylesheet" href="homescreen.css">
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, collection, doc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+
+    // Your Firebase project configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBk7eRIfodYvqoGDmcghx2yOGGmZEY-jT8",
+      authDomain: "tissutrak-mvp.firebaseapp.com",
+      projectId: "tissutrak-mvp",
+      storageBucket: "tissutrak-mvp.firebasestorage.app",
+      messagingSenderId: "373622573645",
+      appId: "1:373622573645:web:20c90cc6cd2111a6d4aa04",
+      measurementId: "G-0SZ4LXY7N1"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = 'login.html'; // Redirect to login if not authenticated
+      } else {
+        console.log('Logged in as:', user.uid);
+        loadHomeData(user.uid);
+      }
+    });
+
+    // Load Today's Health Data
+    async function loadHomeData(userId) {
+      // Load symptoms count
+      const symptomsSnapshot = await getDocs(collection(db, "users", userId, "symptoms"));
+      document.getElementById('symptoms-count').textContent = symptomsSnapshot.size;
+
+      // Load latest mood
+      const moodQuery = query(collection(db, "users", userId, "mental_health"), orderBy("date", "desc"), limit(1));
+      const moodSnapshot = await getDocs(moodQuery);
+      if (!moodSnapshot.empty) {
+        const moodData = moodSnapshot.docs[0].data();
+        document.getElementById('mood-value').textContent = moodData.moodValue || "N/A";
+      } else {
+        document.getElementById('mood-value').textContent = "No data";
+      }
+
+      // Load latest heart rate
+      const vitalsQuery = query(collection(db, "users", userId, "vitals"), orderBy("date", "desc"), limit(1));
+      const vitalsSnapshot = await getDocs(vitalsQuery);
+      if (!vitalsSnapshot.empty) {
+        const vitalsData = vitalsSnapshot.docs[0].data();
+        document.getElementById('heart-rate-value').textContent = vitalsData.heartRate ? vitalsData.heartRate + " bpm" : "No data";
+      } else {
+        document.getElementById('heart-rate-value').textContent = "No data";
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+  </header>
+
+  <!-- Today's Health Section -->
+  <section class="health-card">
+    <h2>Today's Health</h2>
+    <div class="health-metrics">
+      <div class="metric">
+        <div>😊</div>
+        <p>Mood</p>
+        <span id="mood-value">Loading...</span>
+      </div>
+      <div class="metric">
+        <div>💓</div>
+        <p>Heart Rate</p>
+        <span id="heart-rate-value">Loading...</span>
+      </div>
+      <div class="metric">
+        <div>📋</div>
+        <p>Symptoms</p>
+        <span id="symptoms-count">Loading...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Access Buttons -->
+  <section class="quick-access">
+    <div class="quick-button" onclick="logSymptoms()">➕ Log Symptoms</div>
+    <div class="quick-button" onclick="mentalHealth()">😊 Mental Health</div>
+    <div class="quick-button" onclick="logExercise()">🏋️ Log Exercise</div>
+    <div class="quick-button" onclick="appointments()">📅 Appointments</div>
+    <div class="quick-button" onclick="logWater()">💧 Log Water</div>
+    <div class="quick-button" onclick="logFood()">🍴 Log Food</div>
+    <div class="quick-button" onclick="monitorVitals()">💓 Monitor Vitals</div>
+    <div class="quick-button" onclick="medication()">💊 Medication</div>
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button class="nav-button" onclick="goHome()">
+      <div class="nav-icon">🏠</div>
+      <div class="nav-title">Home</div>
+    </button>
+
+    <button class="nav-button" onclick="goToSymptoms()">
+      <div class="nav-icon">📋</div>
+      <div class="nav-title">Symptoms</div>
+    </button>
+
+    <button class="nav-button" onclick="goToReports()">
+      <div class="nav-icon">📊</div>
+      <div class="nav-title">Reports</div>
+    </button>
+
+    <button class="nav-button" onclick="goToProfile()">
+      <div class="nav-icon">👤</div>
+      <div class="nav-title">Profile</div>
+    </button>
+  </nav>
+
+  <script src="/nav.js"></script> <!-- Your navigation javascript -->
+
+</div>
+
+<script src="homescreen.js"></script> <!-- Your other homescreen logic if needed -->
+
+</body>
+</html>

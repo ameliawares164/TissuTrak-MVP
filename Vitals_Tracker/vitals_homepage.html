@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitals Tracker</title>
+  <link rel="stylesheet" href="vitals_homepage.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo">
+      <h1>Vitals Tracker</h1>
+    </header>
+
+    <!-- Quick Access Button -->
+    <div class="quick-access">
+      <button class="log-btn" onclick="logVitals()">➕ Log Vitals</button>
+    </div>
+
+    <!-- Today's Vitals Summary -->
+    <section class="vitals-summary">
+      <h2>Today's Vitals</h2>
+      <div class="vitals-grid" id="today-vitals">
+        <!-- Dynamic vitals will go here -->
+      </div>
+    </section>
+
+    <section class="recent-entries">
+        <h2><button class="section-link" onclick="viewHistory()">Recent Entries</button></h2>
+        <div id="recent-entries">
+          <!-- Dynamic recent entries go here -->
+        </div>
+      </section>
+      
+
+    <!-- Visual Trends -->
+    <section class="visual-trends">
+      <h2>Visual Trends</h2>
+
+      <div class="trend-section">
+        <h3>Heart Rate Trends (Past 3 Months)</h3>
+        <canvas id="heartRateChart" class="trend-img"></canvas>
+      </div>
+
+      <div class="trend-section">
+        <h3>Blood Pressure Trends (Past 3 Months)</h3>
+        <canvas id="bloodPressureChart" class="trend-img"></canvas>
+      </div>
+
+    </section>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-button" onclick="goHome()">
+      <div class="nav-icon">🏠</div>
+      <div class="nav-title">Home</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToSymptoms()">
+      <div class="nav-icon">📋</div>
+      <div class="nav-title">Symptoms</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToReports()">
+      <div class="nav-icon">📊</div>
+      <div class="nav-title">Reports</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToProfile()">
+      <div class="nav-icon">👤</div>
+      <div class="nav-title">Profile</div>
+    </button>
+  </nav>
+  
+  <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+  
+
+  <script src="vitals_homepage.js"></script>
+</body>
+</html>

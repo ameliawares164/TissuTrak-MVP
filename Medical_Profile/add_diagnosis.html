@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="checkLogin()">
+
+    <script>
+    function checkLogin() {
+      auth.onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location.href = 'login.html'; // If not logged in, force back
+        }
+      });
+    }
+    </script>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Diagnosis</title>
+  <link rel="stylesheet" href="add_diagnosis.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <button class="back-button" onclick="goBack()">←</button>
+    <h1 class="page-title" id="dynamic-title">Add a New Diagnosis</h1>
+  </header>
+
+  <form id="diagnosis-form">
+
+    <label for="diagnosis-name">Diagnosis Name*</label>
+    <input type="text" id="diagnosis-name" placeholder="Enter diagnosis name" onblur="updateTitle()" required>
+
+    <label for="diagnosis-date">Date of Diagnosis</label>
+    <input type="date" id="diagnosis-date">
+
+    <label for="doctor-name">Diagnosing Doctor/Specialist</label>
+    <input type="text" id="doctor-name" placeholder="Enter doctor's name">
+
+    <label for="notes">Symptoms & Notes</label>
+    <textarea id="notes" rows="4" placeholder="Describe symptoms, severity, or treatment plan..."></textarea>
+
+    <div class="button-group-single">
+      <button type="submit" class="save-button">Save Diagnosis</button>
+    </div>
+
+  </form>
+
+</div>
+
+<script src="add_diagnosis.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+  }
+  
+  .container {
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .logo {
+    height: 80px; /* was 40px before, now bigger */
+    margin-bottom: 8px;
+  }
+  
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 8px 0 0 0;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-header h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .label {
+    font-weight: 600;
+    color: #666;
+  }
+  
+  .entry {
+    background-color: #f1f3f6;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  
+  .entry small {
+    color: #666;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* keep it on top */
+  }
+  
+  .nav-button {
+    flex: 1; /* 🛠 Each button takes exactly 1/4 of screen width */
+    background: none;
+    border: none;
+    color: #00b394; /* TissuTrak blue */
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #e0f7f4;
+    color: #00917d;
+  }
+  
+  .nav-icon {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .nav-title {
+    font-size: 12px;
+  }
+  
+  

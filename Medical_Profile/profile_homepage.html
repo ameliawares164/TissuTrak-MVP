@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Profile</title>
+  <link rel="stylesheet" href="profile_homepage.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <img src="T-removebg-preview.png" alt="TissuTrak Logo" class="logo" />
+      <h1 class="page-title">Medical Profile</h1>
+    </header>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Personal Information</h2>
+        <button class="icon-button" onclick="editPersonalInfo()">✏️</button>
+      </div>
+      <p><span class="label">Name:</span> <span id="user-name">John Doe</span></p>
+      <p><span class="label">Date of Birth:</span> <span id="user-dob">15/03/1985</span></p>
+      <p><span class="label">Gender:</span> <span id="user-gender">Male</span></p>
+      <p><span class="label">Contact:</span> <span id="user-contact">+1 234 567 8900</span></p>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Medical Conditions</h2>
+        <button class="icon-button" onclick="navigateToAddDiagnosis()">➕</button>
+      </div>
+      <div id="medical-conditions-list">
+        <!-- Diagnoses dynamically inserted here -->
+      </div>
+    </section>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-button" onclick="goHome()">
+      <div class="nav-icon">🏠</div>
+      <div class="nav-title">Home</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToSymptoms()">
+      <div class="nav-icon">📋</div>
+      <div class="nav-title">Symptoms</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToReports()">
+      <div class="nav-icon">📊</div>
+      <div class="nav-title">Reports</div>
+    </button>
+  
+    <button class="nav-button" onclick="goToProfile()">
+      <div class="nav-icon">👤</div>
+      <div class="nav-title">Profile</div>
+    </button>
+  </nav>
+  
+  <script src="/nav.js"></script> <!-- This links to your nav JavaScript -->
+  
+  <script src="profile_homepage.js"></script>
+</body>
+</html>

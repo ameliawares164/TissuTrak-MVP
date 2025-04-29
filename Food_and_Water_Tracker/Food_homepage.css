@@ -1,0 +1,184 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+}
+
+.settings-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.intake-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tracker {
+  text-align: center;
+  flex: 1;
+}
+
+.emoji {
+  font-size: 24px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00b394;
+  border-radius: 5px;
+  width: 0%;
+}
+
+.quick-add {
+  display: flex;
+  justify-content: center; /* Center the two buttons */
+  gap: 20px; /* Space between Log Food and Log Water */
+  margin-bottom: 20px;
+}
+
+.quick-add button {
+  background-color: #00b394;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quick-add button span.plus {
+  color: black;
+  margin-right: 5px;
+}
+
+.quick-add button:focus {
+  outline: none;
+}
+
+.recent-logs-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+.recent-logs-btn:hover {
+  color: #00b394; /* TissuTrak blue highlight on hover */
+}
+
+.recent-entries h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.recent-entries ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-entries li {
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* keep it on top */
+}
+
+.nav-button {
+  flex: 1; /* 🛠 Each button takes exactly 1/4 of screen width */
+  background: none;
+  border: none;
+  color: #00b394; /* TissuTrak blue */
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #e0f7f4;
+  color: #00917d;
+}
+
+.nav-icon {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.nav-title {
+  font-size: 12px;
+}
+

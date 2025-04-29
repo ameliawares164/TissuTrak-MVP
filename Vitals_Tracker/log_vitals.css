@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Container */
+  .container {
+    padding: 20px;
+    padding-bottom: 100px;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .back-btn {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Input Section */
+  .input-group {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+  
+  /* Inputs */
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: none;
+    resize: vertical;
+  }
+  
+  .input-group textarea {
+    min-height: 80px;
+  }
+  
+  /* Unit Text */
+  .unit {
+    font-size: 14px;
+    color: #666;
+    margin-left: 5px;
+  }
+  
+  /* Save Button */
+  .save-btn {
+    width: calc(100% - 40px);
+    background-color: #00b394;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+  }
+  

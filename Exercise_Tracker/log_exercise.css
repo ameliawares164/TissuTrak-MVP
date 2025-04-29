@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 24px; /* balance out back button */
+  }
+  
+  .entry-section {
+    margin-bottom: 20px;
+  }
+  
+  #search-bar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #00b394;
+    border-radius: 8px;
+  }
+  
+  #selected-exercise {
+    margin-top: 10px;
+    color: #00b394;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .exercise-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  select, input[type=\"number\"], textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .duration-section, .vitals-section {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .duration-section input, .vitals-section input {
+    flex: 2;
+  }
+  
+  .duration-section select, .vitals-section select {
+    flex: 1;
+  }
+  
+  .pain-slider {
+    width: 100%;
+  }
+  
+  .pain-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  
+  .save-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #00b394;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

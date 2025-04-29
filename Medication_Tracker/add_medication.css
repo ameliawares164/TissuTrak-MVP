@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .page-title {
+    flex-grow: 1;
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  form input, form select, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .dosage-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  #dosage {
+    flex: 2;
+  }
+  
+  #dosage-unit {
+    flex: 1;
+  }
+  
+  .save-btn {
+    background-color: #00b394;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

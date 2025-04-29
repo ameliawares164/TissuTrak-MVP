@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Container */
+  .container {
+    padding: 20px;
+    padding-bottom: 120px;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .back-btn {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Entry Date */
+  .entry-date {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Vital Main Info */
+  .vital-main {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .vital-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .vital-value {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .vital-range {
+    font-size: 16px;
+    color: #00b394;
+    margin-top: 5px;
+  }
+  
+  /* Sections */
+  .section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .section-content {
+    color: #333;
+  }
+  
+  /* Trend Image */
+  .trend-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Next Measurement */
+  .next-measurement {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  /* Bottom Buttons */
+  .bottom-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .edit-btn, .delete-btn {
+    background-color: #00b394;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

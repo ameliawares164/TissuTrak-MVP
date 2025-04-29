@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitals Entry</title>
+  <link rel="stylesheet" href="vitals_entry.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn" onclick="goBack()">⬅️</button>
+    <h1 class="title">Vitals Entry</h1>
+  </header>
+
+  <!-- Date -->
+  <div class="entry-date" id="entry-date"></div>
+
+  <!-- Vital Main Info -->
+  <div class="vital-main">
+    <div class="vital-icon" id="vital-icon">❤️</div>
+    <div class="vital-value" id="vital-value"></div>
+    <div class="vital-range" id="vital-range">Normal Range</div>
+  </div>
+
+  <!-- Notes Section -->
+  <div class="section">
+    <div class="section-title">Notes</div>
+    <div class="section-content" id="vital-notes">No notes added.</div>
+  </div>
+
+  <!-- Vitals Trend -->
+  <div class="section">
+    <div class="section-title">Vitals Trend</div>
+    <canvas id="trendChart" class="trend-img"></canvas> <!-- Real Graph Here -->
+  </div>
+
+  <!-- Next Measurement -->
+  <div class="next-measurement" id="next-measurement">
+    ⏰ Next measurement time not set.
+  </div>
+
+</div>
+
+<!-- Bottom Buttons -->
+<div class="bottom-buttons">
+  <button class="edit-btn" onclick="editEntry()">📝 Edit</button>
+  <button class="delete-btn" onclick="deleteEntry()">🗑️ Delete</button>
+</div>
+
+<script src="vitals_entry.js"></script>
+</body>
+</html>

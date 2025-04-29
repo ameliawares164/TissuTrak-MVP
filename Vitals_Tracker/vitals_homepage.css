@@ -1,0 +1,191 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Container */
+  .container {
+    padding: 20px;
+    padding-bottom: 100px; /* Extra padding at the bottom to space from nav */
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    height: 70px; /* Increased size */
+    margin-bottom: 8px;
+  }
+  
+  h1 {
+    font-size: 26px;
+    margin: 0;
+  }
+  
+  /* Quick Access Button */
+  .quick-access {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .log-btn {
+    background-color: #00b394;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  
+  /* Today's Vitals Summary */
+  .vitals-summary {
+    margin-bottom: 20px;
+  }
+  
+  .vitals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .vital-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #eee;
+  }
+  
+  .vital-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .vital-value {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* Recent Entries */
+  .recent-entries {
+    margin-bottom: 20px;
+  }
+  
+  .entry-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .timestamp {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* Visual Trends */
+  .visual-trends {
+    margin-bottom: 40px; /* Increased spacing under chart */
+  }
+  
+  .trend-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Bottom Navigation */
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .bottom-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+  }
+  /* Recent Entries Button Styled Like Section Title */
+.section-link {
+    background: none;
+    border: none;
+    font-size: 22px; /* Match h2 size */
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    color: black;
+    padding: 0;
+  }
+  
+  .section-link:hover {
+    color: #00b394; /* TissuTrak Blue on hover */
+  }
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* keep it on top */
+  }
+  
+  .nav-button {
+    flex: 1; /* 🛠 Each button takes exactly 1/4 of screen width */
+    background: none;
+    border: none;
+    color: #00b394; /* TissuTrak blue */
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #e0f7f4;
+    color: #00917d;
+  }
+  
+  .nav-icon {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .nav-title {
+    font-size: 12px;
+  }
+  

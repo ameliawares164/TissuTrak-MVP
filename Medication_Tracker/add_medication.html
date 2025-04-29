@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="checkLogin()">
+
+    <script>
+    function checkLogin() {
+      auth.onAuthStateChanged(function(user) {
+        if (!user) {
+          window.location.href = 'login.html'; // If not logged in, force back
+        }
+      });
+    }
+    </script>
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log a New Medication</title>
+  <link rel="stylesheet" href="add_medication.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with back button -->
+    <header class="header">
+      <button class="back-btn" id="back-btn">←</button>
+      <h1 class="page-title">Log a New Medication</h1>
+    </header>
+
+    <!-- Manual Entry Form -->
+    <form id="medication-form">
+      <label for="medication-name">Medication Name</label>
+      <input type="text" id="medication-name" placeholder="Enter medication name">
+
+      <label for="dosage">Dosage</label>
+      <div class="dosage-group">
+        <input type="number" id="dosage" placeholder="Amount">
+        <select id="dosage-unit">
+          <option value="mg">mg</option>
+          <option value="mL">mL</option>
+          <option value="unit">unit</option>
+        </select>
+      </div>
+
+      <label for="administration-method">Method of Administration</label>
+      <select id="administration-method">
+        <option value="Pill">Pill</option>
+        <option value="Injection">Injection</option>
+        <option value="IV">IV</option>
+        <option value="Topical">Topical</option>
+      </select>
+
+      <label for="reason">Reason for Taking</label>
+      <input type="text" id="reason" placeholder="Enter reason for taking">
+
+      <label for="frequency">How Frequently</label>
+      <select id="frequency">
+        <option value="Once Daily">Once Daily</option>
+        <option value="Twice Daily">Twice Daily</option>
+        <option value="Every 6 Hours">Every 6 Hours</option>
+        <option value="As Needed">As Needed</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Hidden custom frequency input -->
+      <div id="custom-frequency-container" style="display:none; margin-top:10px;">
+        <input type="text" id="custom-frequency" placeholder="Enter custom frequency">
+      </div>
+
+      <label for="times">Time(s) to Take</label>
+      <input type="text" id="times" placeholder="Example: 8:00 AM, 6:00 PM">
+
+      <label for="start-date">Start Date</label>
+      <input type="date" id="start-date">
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" rows="3" placeholder="Enter any notes..."></textarea>
+
+      <!-- Save Button -->
+      <button type="submit" class="save-btn">✅ Save & Log Medication</button>
+    </form>
+  </div>
+
+  <script src="add_medication.js"></script>
+</body>
+</html>

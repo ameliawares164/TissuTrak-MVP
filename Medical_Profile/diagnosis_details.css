@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  overflow-x: hidden; /* Important: prevent side scroll */
+}
+
+.container {
+  padding: 16px;
+  max-width: 600px; /* Set a max width for better readability */
+  margin: 0 auto; /* Center the content */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.diagnosis-entry {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* Critical to prevent padding overflow */
+  width: 100%;
+}
+
+.diagnosis-entry input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box; /* Critical to prevent width overflow */
+  font-size: 14px;
+}
+
+.diagnosis-entry label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+  color: #333;
+}
+
+.edit-button {
+  background: #00b394;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.edit-button:hover {
+  background: #009f84;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.add-button {
+  background: #00b394;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #009f84;
+}

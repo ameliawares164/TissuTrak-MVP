@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Details</title>
+  <link rel="stylesheet" href="appointment_entry.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <button class="back-btn" onclick="goBack()">⬅️</button>
+      <h1 class="page-title">Appointment Details</h1>
+    </header>
+
+    <!-- Appointment Details -->
+    <section class="card">
+      <h2 id="provider-name"></h2>
+      <p class="subtext" id="provider-specialty">Healthcare Provider</p>
+
+      <div class="info-item">
+        <span>📍 Location</span>
+        <p id="appointment-location"></p>
+      </div>
+
+      <div class="info-item">
+        <span>📅 Date & Time</span>
+        <p id="appointment-datetime"></p>
+      </div>
+
+      <div class="info-item">
+        <span>📝 Reason for Visit</span>
+        <p id="appointment-reason"></p>
+      </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="card">
+      <h2>Notes</h2>
+      <p id="appointment-notes"></p>
+    </section>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="edit-btn" onclick="editAppointment()">✏️ Edit</button>
+      <button class="delete-btn" onclick="deleteAppointment()">🗑️ Delete</button>
+    </div>
+
+  </div>
+
+  <script src="appointment_entry.js"></script>
+
+</body>
+</html>

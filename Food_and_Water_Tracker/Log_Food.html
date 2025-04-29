@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<body onload="checkLogin()">
+
+  <script>
+  function checkLogin() {
+    auth.onAuthStateChanged(function(user) {
+      if (!user) {
+        window.location.href = 'login.html'; // If not logged in, force back
+      }
+    });
+  }
+  </script>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TissuTrak - Log Food Intake</title>
+  <link rel="stylesheet" href="log_food.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button id="backBtn">⬅️</button>
+      <h1 id="pageTitle">Log Food Intake</h1>
+    </header>
+
+    <!-- Meal Name -->
+    <section class="meal-name">
+      <h3>Meal Name</h3>
+      <input type="text" id="mealName" placeholder="e.g., Chicken Salad" />
+    </section>
+
+    <!-- Meal Type Buttons -->
+    <section class="meal-type">
+      <h3>Select Meal Type</h3>
+      <div class="meal-buttons">
+        <button class="meal-btn" data-meal="Breakfast">🍳 Breakfast</button>
+        <button class="meal-btn" data-meal="Lunch">🥗 Lunch</button>
+        <button class="meal-btn" data-meal="Dinner">🍛 Dinner</button>
+        <button class="meal-btn" data-meal="Snack">🍎 Snack</button>
+      </div>
+    </section>
+
+    <!-- Ingredients -->
+    <section class="ingredients-section">
+      <h3>Add Ingredients</h3>
+      <div class="ingredients-container">
+        <input type="text" id="ingredient" placeholder="Ingredient Name" />
+        <input type="number" id="amount" placeholder="Amount" />
+        <select id="unitSelect">
+          <option value="oz">oz</option>
+          <option value="cup">cup</option>
+          <option value="g">grams</option>
+          <option value="tablespoon">tablespoon</option>
+          <option value="teaspoon">teaspoon</option>
+          <option value="slice">slice</option>
+        </select>
+        <button id="addIngredientBtn">+ Add</button>
+      </div>
+      <ul id="ingredientList"></ul>
+    </section>
+
+    <!-- Notes -->
+    <section class="notes-section">
+      <h3>Notes</h3>
+      <textarea id="notesInput" placeholder="Add any notes..."></textarea>
+    </section>
+
+    <!-- Date and Time -->
+    <section class="date-time">
+      <h3>Date & Time 📅⏰</h3>
+      <input type="date" id="mealDate" />
+      <input type="time" id="mealTime" />
+    </section>
+
+    <!-- Save Button -->
+    <button id="saveFoodBtn">✅ Save & Log Meal</button>
+
+  </div>
+
+  <script src="log_food.js"></script>
+</body>
+</html>

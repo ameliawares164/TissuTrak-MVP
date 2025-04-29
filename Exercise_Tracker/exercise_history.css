@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 24px;
+  }
+  
+  .filters-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .filters-section label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .entries-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .entry-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .entry-card:hover {
+    background-color: #e6fcf7;
+  }
+  
+  .entry-title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .entry-subtitle {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .entry-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .entry-expanded .entry-details {
+    display: block;
+  }
+  
+  .export-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #00b394;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

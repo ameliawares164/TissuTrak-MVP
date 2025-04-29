@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .back-btn {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .input-group select {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: none;
+  }
+  
+  #vitals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .vital-entry {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .vital-bold {
+    font-weight: bold;
+  }
+  
+  .vital-time {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .entry-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .entry-actions button {
+    background-color: #00b394;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .no-entries {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+    color: #999;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .export-btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #00b394;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
